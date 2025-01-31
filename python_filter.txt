@@ -1,0 +1,44 @@
+Welcome to ' filter() '
+-------------------------------------------------------
+
+#What is the built-in filter command? What does it do? 
+
+-Filter will filter each element of iterable data, such as lists or strings, based on a function 
+passed as an argument to the filter function. These are similar to the map function and can be 
+combined with it. The difference between a map function and a filter function is this: the filter
+function applies a conditional statement as a filter to the *elements* of an interable. 
+
+#Recall that the constructor for a map() is as follows; map(function, iterable). The map function
+#then applies the function to every iterable. What is different here is that the filter function
+#will apply a function to iterable data, and then produce a result that ONLY contains data matching
+#the function. 
+
+|Where should I use a filter?|
+
+You may want to use a filter based on the following criteria...
+
+What if I want to:
+
+-see length of items?
+-see numerical data above or below zero?
+-odd or even numbers?
+-division remainders equal to zero?
+-abosulute values?
+-data that contains certain characters?
+-alphabetic order?
+-reverse alphabetic order?
+
+Then there's a good chance you'd want to use a filter! There are more scenarios than the above, but
+you follow the general idea. When you want to see specific data from a tuple, list, etc, a filter
+can be a great way to obtain that information. Think of it like this. You have a list sitting in 
+front of you that contains many different numbers, but you want to know only the even numbers
+that are in the list. Here's how you could use a filter to accomplish that:
+
+	some_list = [1, 2, 3, 5, 6, 8, 9, 17]
+	fnc = lambda x: x % 2 == 0
+	print(list(filter(fnc, some_list)))
+
+#prints out [2, 6, 8]
+
+-Why did it work this way? Simple. Our described function, 'fnc' is a lambda that calculates the
+value of x % 2 == 0. The filter 
