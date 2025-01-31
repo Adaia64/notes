@@ -41,4 +41,11 @@ that are in the list. Here's how you could use a filter to accomplish that:
 #prints out [2, 6, 8]
 
 -Why did it work this way? Simple. Our described function, 'fnc' is a lambda that calculates the
-value of x % 2 == 0. The filter 
+value of x % 2 == 0. The filter then iterates over all data, using the modulo operator " % "
+to divide all of the numbers within the list by 2. When there is a remainder, the function, in
+this case our lambda, returns false. If there is no remainder, it returns true. Thus, the integers
+from our list--2, 6, 8--were output from the filter. Because the filter searches for data matching 
+the conditional, this is what happened. 
+
+|Example 1|
+
