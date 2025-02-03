@@ -47,5 +47,98 @@ this case our lambda, returns false. If there is no remainder, it returns true. 
 from our list--2, 6, 8--were output from the filter. Because the filter searches for data matching 
 the conditional, this is what happened. 
 
-|Example 1|
+|Example 1| Finding Vowlels...
+
+
+	some_string = "Winter Olympics"
+	fnc = lambda x: True if x in "a, e, i, o, u, A, E, I, O, U" else False
+	print(list(filter(fnc, some_string)))
+
+#prints [i, e, O, i]
+
+|Example 2| .sort() -- sorting the list's elements directly
+
+	some_list = [1, 5, 66, 7]
+	some_list.sort(key=lambda x:X)
+	print(some_list)
+
+#prints [1,5,7,66]. You will notice that the lambda includes a 'key=' line. The reason for this is
+#that when you want to call .sort() directly on a function as an argument, you need to use it with
+#the 'key=' keyword, otherwise python will read a method such as .sort() as the first argument
+#passed into a filter
+
+|Example 3| Filter + Map Combinations
+
+-Filters can be combined with other functions or itself ((a double filter)). This is useful when 
+you match it up with another function, such as map(). You can apply functions to each item in a 
+sequence based on a filtering criteria. 
+
+For example, imagine there is a Python Dictionary of countries and their population. You want to 
+return a list with each value increased by 20%, but you only want to return countries above 
+10,000,000 population.
+
+By combining map and filter, you can create a dictionary which multiplies these values by 1.2 only 
+if the population is above 10,000,000. Half of this operation can be fulfilled by filter function
+where the other half is achieved by map function. 
+
+>>Filter and Map can be used to complete each other. If you would like to map() the elements of your
+list to specific values, but also only do this to the elements that pass the filter, you can use
+filter() inside map(). For example...
+
+# map(function, filter(function, iterable))
+
+In this example, the map object calls a function which is THEN applied to a filter object, which its
+function then applies on its iterable data. 
+
+	some_list = [1,4,9,11,400]
+	fnc = map(lambda x: x**2, filter(lambda x: x<10, some_list))
+	print(list(fnc))
+
+#returns [1, 16, 81]
+
+If we break this down bit by bit, we will see that the map object is initialized in " fnc ". 
+The instance, " fnc ", is then set to to a value. It has a map, which first calls the function
+lambda x: x**2 to be applied to another object--in this case, a filter. The filter then receives
+its own function, lambda x: x<10, some_list. The combined instance is essentially searching for
+"True" results that fulfill the conditions of the map and the filter, which we are then able to see
+when we create a list from the instance, " fnc ". 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
