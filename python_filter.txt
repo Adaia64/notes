@@ -50,9 +50,10 @@ the conditional, this is what happened.
 |Example 1| Finding Vowlels...
 
 
-	some_string = "Winter Olympics"
-	fnc = lambda x: True if x in "a, e, i, o, u, A, E, I, O, U" else False
-	print(list(filter(fnc, some_string)))
+	string = "Winter Olympics"
+	vowels = "aeiouAEIOU"
+	fnc = lambda x: True if x in vowels else False
+	print(list(filter(fnc, string)))
 
 #prints [i, e, O, i]
 
