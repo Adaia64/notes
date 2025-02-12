@@ -1,0 +1,69 @@
+Welcome to " .join() "
+-------------------------------------------------------
+
+- .join() is a useful string method that will join strings with a specified string or character.
+Inside a .join()'s parenthesis is where you will put the strings that are to be added together
+In front of a a .join()'s parenthesis is where the character which adds the string together is set
+
+#When to use? 
+
+-Accessing substrings in strings. (email address or domain extraction)
+-Exctracting parts of lists
+-Extracting parts of tuples
+
+#Syntax do(s)
+
+-Follow the syntax notation [start:end:step]
+-If start is not given it will start from zero
+
+#Syntax don't(s)
+
+-Dictionaries have no orders and their values are accessed by keys, so you can't slice a dictionary
+
+
+|Example 1|
+
+	some_list = {"Pacific", "Atlantic", "Indian"]
+	fnc = "".join(some_list)
+	print(fnc)
+
+#prints PacificAtlanticIndian. Normally when we print a list, we would receive it in list format,
+#like this, ["Pacific", "Atlantic", "Indian"]. Instead, with the .join() method, we have received it
+#as PacificAtlanticIndian. Why is that? It's becauuse we placed "" before .join(), so when the string
+#was printed, it returned each item within the list object as a string with no spaces. If we had 
+#formatted it as " ".join(some_list), we would have received Pacific Atlantic Indian. The same works
+#with commas or any other character(s) you add to the .join() statement. For example, if we were to
+#format it as " ocean ".join(some_list), we would receive Pacific ocean Atlantic ocean Pacific. 
+#Notice that only the first 2 items received the ocean text that we joined. Why? It's because the 
+#.join() method adds the argument to the end of each *item* in the list, but is NOT inherently
+#inclusive to the end literal end of a list. 
+
+|Example 2| .join() on a string
+
+	print("x".join("Hello"))
+
+#prints Hxexlxlxo. Notice that when using join on a string, it adds the statement to each element of 
+#the string, similar to how the list worked. However, in this case, the string's elements are 
+#considered to be each character of the string...where as in the example of the list, each element
+#was considered to be every list item. Notice again that the final element of the .join() argument is
+#NOT inclusive of the final element. 
+
+|Additional Tips, Closing Thoughts|
+
+-.join() is often confused for what data should be placed in front and what comes after. 
+Gluue (character that will join strings together) should be in the front of the .join() function
+and the strings to be added should be inside the parenthesis that come after. E.g....
+
+	"some".join("example")
+
+|Example 3| Slicing
+
+-Slicing is a useful tool that can help you select particular start, middle, and end points of data
+that you want to access. It is done with square brackets [] placed next to an object. E.g....
+
+	some_list = list(range(10))
+	print(some_list[::]
+
+#prints [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+There will be more on slicing later. 

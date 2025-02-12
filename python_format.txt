@@ -1,0 +1,86 @@
+Welcome to " .format()  "
+-------------------------------------------------------
+
+Format is a built in python method. It can be used to make data, numbers, strings or floats more 
+representable. Sometimes they can be used to place values in a string for convenience. It makes
+value formating in Python very simple. It can be used for decimal formatting or it can be used with
+place holders represented in curly brackets {}. This allows you to create more complicated strings 
+and place independent variables inside the string easily.
+
+#Where to use a .format()?
+
+-Placing values or variables in string
+-Formatting numbers
+
+#Syntax do(s)
+
+-Usable inside of strings by placing curly brackets within string. E.g....
+
+	"{} {}".format("Hello, "World!")
+#prints "Hello World!"
+
+#Syntax don't(s)
+
+-Don't forget that format works in different ways but it's always applied to a string object even
+when working with numbers. Eg....
+
+	"{:,.2f}".format(123.123)
+#prints 123.12
+
+The above is a common way to reduce float by decimal place. In this case, the character, f, 
+determines how many decimal places will follow the provided number. In this case, 123.123, thus
+when the format method is used on the provided string, it returns 123.12 because it only determines
+2 decimal places following. Notice that the curly brackets are placeed insde a string and the object
+inside of the parenthesis of .format() is what takes the place of the curly brackets.
+
+|Example 1| Format with multiple values
+
+-Multiple values can be placed inside a string using .format(). E.g....
+
+	user_message = "Jackson weighs {}, Harry weighs {} and Lindsay weighs {}"
+	print((user_message).format("160 Lbs", "205 Lbs", "180 Lbs"))
+
+#prints "Jackson weighs 160 Lbs, Harry weighs 205 Lbs and Lindsay weighs 180 Lbs"
+
+#Notice that in the above example, the print statement includes a double parenthesis. You will need 
+#to do this when using .format() in this way otherwise you will receive a traceback error of 
+#.format() attempting to call a NoneType object. This occurs because Python would read it as calling
+#.format(), essentially, onto nothing. But if you use a double parenthesis(or however many you need 
+#to connect) Python will read it as being called on the print statement itself.
+
+
+
+
+|Example 2| Using other functions with .format()
+
+-Sometimes, it will be useful to apply the .format() method to another function, such as map. 
+Suppose you have a list of numbers, and you wanted to receive the list of numbers to a certain
+decimal point. You could, for instance, use a map object with a .format() method in order to do this
+
+	some_list = [205.2584, 0.88745, 140.589, 7859.52368] 
+	new_list = map("{:,.2f}".format, some_list)
+	print(list(new_list))
+
+#prints ['205.25', '0.89', '140.59', '7859.52']. In this scenario, the map() object calls the
+#.format() method onto the instance, ' some_list '. We the print the map object as a list.
+
+|Example 3| Thousands
+
+{:,} can be used to format, placing commas between integers at every appropriate expression.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

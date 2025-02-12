@@ -1,0 +1,95 @@
+Welcome to .split()
+-------------------------------------------------------
+
+.split() is another built in method of Python. It creates a list of strings. 
+
+#Where to use?
+
+.split() is used to split strings based on a specified character or substring.
+
+-Clean up raw data
+-Separate words with space character " "
+-Separate data with delimiters such as the colo (:), common with financial data
+-Separate sentences based on full stops (.)
+-to split email addresses from its domain using '@" sign
+
+#Syntax Do(s)
+
+- Place string to 'split' from the iterable data in front of the .split(). E.g...
+	some_string = "Hello World"
+	fnc = "Hello".split(some_string)
+	print(fnc)
+#prints "Hello". 
+
+#Notice that the string we received is "Hello" from "Hello World". This is because we specified that
+#the argument for the .split() method was "Hello". So, in this function call, our instance, 'fnc', 
+#took "Hello" from "Hello World" and prints "Hello". This is because we have done the split improperly
+#You could place any string before the .split() method and it would return whatever you placed before.
+#The way we are SUPPOSED to format is as follow....
+
+	some_string = "Hello World"
+	fnc = some_string.split("Hello")
+	print(fnc)
+#prints ['', ' World']
+
+#Notice that what we receive in the print statement is 2 list elements. We know that a .split() returns
+#a list of strings, which is what has happened here. We receoved a blank space as the first element, and
+# " World" with a leading space as the second element. So what has happened here? We removed "Hello" from
+#some_string, but still have 2 list elements and with a pesky space! How could we get the list back
+#without a leading space or blank elements?
+
+	some_string = "Hello World"
+	fnc = some_string.split(" ")
+	print(fnc)
+
+#prints ['Hello', 'World']. We receive this result because the .split() argument is now only splitting
+#" " from some_string. In other words, a space. 
+
+Let us further our understanding of what exactly is happening with the .split() method. What if we had:
+
+	some_string = "Hello World"
+	fnc = some_string("l")
+	print(fnc)
+
+#prints ['He', '', 'o Wor', 'd']
+
+#Notice that in this example, we have received 4 elements as a list. This is because we split the 
+#character "l" from some_string. So, everytime the split method encountered an l, it split the l from
+#"Hello World". Thus, the print statement returns a list of strings where every element is a string 
+#where l has been removed. This means that in "Hello", when our .split() method is called, it removes
+#the first l. This makes the first list element 'He'. So on and so forth. 
+
+|Advanced Concepts|
+
+-Split method also takes a maxsplit paramter which defines the number of splits that should take place
+If you don't use the maxsplit parameter it is going to be -1 by default meaning no limit on the amount
+of splits. 
+
+	some_string = "I am dumb lol"
+	print(some_string.split(" ", maxsplit=2))
+
+#prints ['I', 'am', 'dumb lol']
+
+#Notice that the list is "I" "am" "dumb lol". Why is it this way? Recall that in Python, 0 means 1...
+#that is, that 0 is the *first* index of an object. So when we use this maxsplit=2, it creates 3 
+#elements. In this case, we have .split() by the space character. For every space seen in the string,
+#the split creates an element based on where the argument becomes true. Essentially, the maxsplit
+#argument is searching for 3 occurences of the space character maximum. Because it is maximum at 2, the
+#list became 3 elements. So the first space is after I, therefore it became element 1 (0). The second
+#space came after am, therefore it became element 2 (1), the third and final space came after dumb,
+#therefore the third element is "dumb lol". For example, if the maxsplit were set to 0, there would only
+#be one element ['I am dumb lol]'. If the maxsplit were set to 1, it would be ['I', 'am dumb lol'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
