@@ -1,0 +1,91 @@
+Welcome to .strip()
+-------------------------------------------------------
+
+|Usage|
+
+- .strip() is a method that's useful for cleaning the whitespaces or other characters from the beginning
+and end of a string. It can be very handy when working with raw data, files, email data, multiple lines, etc
+
+|Where to use?|
+
+-Cleaning Data
+-Removing specific leading and trailing characters from a string
+
+How to >> .strip() removes leading and trailing whitespaces from a string according to the character 
+passed inside the parenthesis as a parameter or, it will remove whitespaces if no argument is passed 
+inside the parenthesis
+
+Syntax do(s)
+-------------------------------------------------------
+-Type the characters you'd like to be *erased* inside the parenthesis
+-if no parameter(argument) is given, .strip() removes whitespaces
+
+Syntax don't(s)
+-------------------------------------------------------
+-Since .strip() is a string function, it can only be applied to Python strings. However, you can convert
+a number to a string and try to apply .strip() method in that way if absolutely needed
+
+|Example 1|
+
+	name = "     Lance Eros       "
+	fnc = name.strip()
+	print(fnc)
+
+#prints "Lance Eros". Notice that the only thing that has changed is that there is no whitespace before
+#or after the string. This is because when no argument is given to .strip(), it will only remove
+#whitespace before and after string. 
+
+|Example 2| Stripping characters
+
+	name = "@@@@@Lance@@@Eros"
+	fnc = name.strip("@")
+	print(fnc)
+
+#prints Lance@@@Eros. Take notice that only the @ symbols which were in front of the name were removed.
+#This is because our .strip() setup will ONLY remove characters that are at the beginning or end of
+#the string. 
+
+|Example 3| Right Strip and Left Strip
+
+-Right strip ( .rstrip() ) and left strip ( .lstrip() ) do as their naming suggests; they follow the same
+syntax rules as .strip(), but instead of applying the argument to both the beginning and the end of the
+string, they instead apply to one side. .lstrip() applies to the left (or start) of a string and .rstrip()
+applies to the right (or end) of a string. E.g....
+
+	string = "     Hello there!"
+	fnc = string.lstrip()
+	print(fnc) 
+
+#prints 'Hello there!'. Notice that only the spaces to the *left* were stripped away. Recall also that
+#if no argument is passed to .strip() commands, the default is to remove whitespace, which would 
+#otherwise be a space character. 
+
+	string = "    Hello there!!!!!"
+	fnc = string.rstrip('!')
+	print(fnc)
+
+#prints "    Hello there". Notice that the whitespace towards the left (or beginning) remains and the 
+# ! characters are removed. The right strip and left strip do pretty much exactly what they say!
+
+
+|Advanced Concepts| Cleaning Multiple Unwanted Characters
+
+You can remove multiple characters simply using .strip(). You just place any concoction of characters
+inside the parenthesis, and .strip() will removee these characters from either the left (start)
+or the right (end). E.g....
+
+	string = "@5^7128Hello*(*"
+	fnc = string.strip("!@#$%^*()1234567890")
+	print(fnc)
+
+#prints 'Hello'. Notice how the characters within the parenthesis are a bunch of mumbo jumbo? That's
+#because you don't need to be ultra specific when specifying. If the .strip() method detects any of
+#the arguments given to .strip(), it will remove them. That includes characters from text. For example,
+#if we had put 'H' inside the argument for .strip(), we would have received 'ello' instead of 'Hello',
+#and if we had put H and e inside the argument for .strip(), we would have received 'llo', BUT
+#if we had placed 'H, l' inside of the argument for .strip(), we would have received 'ello'. Why?
+#The reason is simple. Because .strip() only targets the beginning and end of a series of characters,
+#in the presented scenario, .strip() stops once it removes H, because the next character is e, which
+# 'blocks' l from being stripped. 
+
+

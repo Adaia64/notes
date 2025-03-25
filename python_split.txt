@@ -48,7 +48,7 @@ Welcome to .split()
 Let us further our understanding of what exactly is happening with the .split() method. What if we had:
 
 	some_string = "Hello World"
-	fnc = some_string("l")
+	fnc = some_string.split("l")
 	print(fnc)
 
 #prints ['He', '', 'o Wor', 'd']
